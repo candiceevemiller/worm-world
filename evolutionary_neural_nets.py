@@ -84,9 +84,9 @@ from cv2 import VideoWriter, VideoWriter_fourcc
 DEFAULT_GENOME_SIZE = 5
 DEFAULT_MUTATION_RATE = 0.01
 DEFAULT_STEP_SIZE = 1
-GENERATION_SIZE = 100
+GENERATION_SIZE = 1000
 WORLD_SIZE = 128
-TIME_STEPS = 1000
+TIME_STEPS = 150
 EPOCHS = 50
 
 # make lookup dictionary
@@ -282,10 +282,10 @@ def generate_population(size, genome_size=DEFAULT_GENOME_SIZE, parents=None):
 def fitness_test(population):
     survivors = []
     cX, cY = (WORLD_SIZE // 2, WORLD_SIZE // 2)
-    r = 28
+    r = 10
     for creature in population:
         x, y = creature.position
-        if (((x-cX) ** 2) + ((y-cY) ** 2)) <= (r ** 2):
+        if (((x-cX)**2) + ((y-cY)**2)) <= (r**2):
             survivors.append(creature)
     return survivors
 
