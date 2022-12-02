@@ -1,12 +1,6 @@
 """ Contains global settings for program """
 
 import numpy as np
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-
-import cv2
-from cv2 import VideoWriter, VideoWriter_fourcc
 
 DEFAULT_GENOME_SIZE = 20
 DEFAULT_MUTATION_RATE = 0.01

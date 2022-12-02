@@ -14,12 +14,12 @@
  can have larger or smaller brains by changing the default settings value. Worm World
  is a work in progress. There are plans to implement:
  * Simulation improvements
-    * allow for in-generation reproduction and include an option to switch from
-      epoch system to continuous simulation
+    * allow for in-generation reproduction and include an option to switch from epoch system to continuous simulation
     * mathematical optimizations
     * collision checking
     * new fitness functions
     * data analysis functions for post-mortem
+    * create better graphical representation of worm-world
  * environmental factors
     * temperature
     * food
@@ -50,8 +50,9 @@
         * poison/venom tolerance
         * mutagen sensitivity
         * promiscuity/libido
- * split the script into more compartmentalized modules
+ * DONE - split the script into more compartmentalized modules (though could still use improvement)
 """
+
 from utils.utils import *
 
 # senses_array = [x_pos, y_pos]
@@ -68,7 +69,7 @@ from utils.utils import *
 # E = weight | signed 16 bit weight to be divided by scaling factor
 # test_chromosome = '000000001000000101101000000000000'
 
-# TODO change epoch and generation so they're consistent
+# TODO change epoch and generation naming so they're consistent
 # TODO Add hidden layers to the neural nets
 
 if __name__ == "__main__":
