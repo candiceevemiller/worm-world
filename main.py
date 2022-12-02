@@ -71,6 +71,7 @@ from utils.utils import *
 
 # TODO change epoch and generation naming so they're consistent
 # TODO Add hidden layers to the neural nets
+# TODO ADD UNIT TESTS
 
 if __name__ == "__main__":
     initial_population = generate_population(GENERATION_SIZE)
