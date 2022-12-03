@@ -10,6 +10,7 @@ import cv2
 from cv2 import VideoWriter, VideoWriter_fourcc
 
 class Linear(layers.Layer):
+    """ Extends the tf.keras.layers.Layer class to more easily access weights """
     def __init__(self, weights, activation='softmax', units=4, input_dim=(2,)):
         super(Linear, self).__init__()
         w_init = tf.random_normal_initializer()
@@ -21,9 +22,12 @@ class Linear(layers.Layer):
         self.activation = activation
 
     def call(self, inputs):
+        """ performs matrix multiplication and calls activation on result """
+        # TODO separate activation function out
         return self._activation(np.matmul(inputs, self.w) + self.b)
 
     def _activation(self, input_value):
+        """ handles activation function for the layer """
         if self.activation == 'softmax':
             return softmax(input_value)
         elif self.activation == 'sigmoid':
@@ -31,6 +35,7 @@ class Linear(layers.Layer):
 
 class Creature:
     """ Defines our base creature or 'worm' """
+    # TODO refactor to extend from a SimulationObject base class
     def __init__(self,
                  genome_size: int = DEFAULT_GENOME_SIZE,
                  genome=None,
